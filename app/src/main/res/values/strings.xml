@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Native Ad</string>
+    <string name="want_to_enable_log">yes</string>
+    <string name="loading_ad_type">test</string>
 </resources>
