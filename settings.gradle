@@ -1,0 +1,3 @@
+include ':nativeadsmall'
+include ':app'
+rootProject.name = "Native Ad"
