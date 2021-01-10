@@ -292,7 +292,7 @@ public class TemplateView extends FrameLayout {
 
     callToActionView = findViewById(R.id.cta);
     iconView = findViewById(R.id.icon);
-    mediaView = (MediaView) findViewById(R.id.media_view);
-    background = (ConstraintLayout) findViewById(R.id.background);
+    mediaView = findViewById(R.id.media_view);
+    background = findViewById(R.id.background);
   }
 }
