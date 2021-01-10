@@ -33,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         loadSmallNativeAd();
     }
 
+    @Override
+    protected void onDestroy() {
+        if (nativeAd != null) {
+            LogManager.d(DEBUG_TAG, "destroying ad");
+            nativeAd.destroy();
+        }
+        super.onDestroy();
+    }
+
     private void initializeAdSdk() {
         //initializing ads sdk
         MobileAds.initialize(this, status-> LogManager.d(DEBUG_TAG, "Mobile ads initialized"));
@@ -53,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         
-        LogManager.e(DEBUG_TAG, "loading ad..");
+        LogManager.d(DEBUG_TAG, "loading ad..");
         findViewById(R.id.ad_placeholder).setVisibility(View.VISIBLE);
         AdLoader adLoader = new AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
                 .forUnifiedNativeAd(unifiedNativeAd -> {
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadNewAdClicked(View view) {
+        LogManager.d(DEBUG_TAG, "loading new ads");
         loadSmallNativeAd();
     }
 }
